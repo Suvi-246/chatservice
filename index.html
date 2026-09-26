@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Chatroom</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Socket.IO client -->
+    <script src="https://chatroom-h7ep.onrender.com/socket.io/socket.io.js"></script>
+</head>
+
+<body>
+
+    <!-- Username screen -->
+    <div id="loginScreen" class="login-screen">
+
+        <div class="login-box">
+
+            <h1>💬 Chatroom</h1>
+
+            <p>Choose a username to enter.</p>
+
+            <input
+                id="usernameInput"
+                type="text"
+                maxlength="20"
+                placeholder="Your username"
+                autocomplete="off"
+            >
+
+            <button id="joinButton">
+                Join Chat
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- Main chat -->
+    <div id="chatApp" class="chat-container hidden">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+
+            <h2>💬 Chatroom</h2>
+
+            <div class="room active">
+                # General
+            </div>
+
+            <div class="room">
+                # Gaming
+            </div>
+
+            <div class="room">
+                # Music
+            </div>
+
+            <div class="room">
+                # Random
+            </div>
+
+
+            <div class="online-title">
+                Online
+            </div>
+
+            <div id="userList"></div>
+
+        </aside>
+
+
+        <!-- Chat -->
+        <main class="chat">
+
+            <header class="chat-header">
+
+                <h1># General</h1>
+
+                <p id="onlineCount">
+                    Connecting...
+                </p>
+
+            </header>
+
+
+            <!-- Messages -->
+            <div
+                id="messages"
+                class="messages"
+            ></div>
+
+
+            <!-- Typing indicator -->
+            <div
+                id="typing"
+                class="typing"
+            ></div>
+
+
+            <!-- Message input -->
+            <form
+                id="messageForm"
+                class="input-area"
+            >
+
+                <input
+                    id="messageInput"
+                    type="text"
+                    maxlength="500"
+                    placeholder="Type a message..."
+                    autocomplete="off"
+                >
+
+                <button type="submit">
+                    Send
+                </button>
+
+            </form>
+
+        </main>
+
+    </div>
+
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>
